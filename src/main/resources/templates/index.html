@@ -7,7 +7,9 @@
         <div class="container text-center">
             <h2 class="display-1">How Delicious Our Donut</h2>
             <h4 class="display-4 my-3">Indulge in joy, one delicious ring at a time.</h4>
-            <a class="btn btn-primary btn-lg" href="#">Explore More</a>
+            <a class="btn btn-primary btn-lg"
+                th:href="@{/menus}"
+            >Explore More</a>
         </div>
     </section>
 
@@ -36,7 +38,9 @@
                                 </p>
                             </div>
                             <div class="card-footer">
-                                <a class="btn btn-primary" href="#">Details</a>
+                                <a class="btn btn-primary"
+                                    th:href="@{'/menus/menu-details?id=' + ${donut.id}}"
+                                >Details</a>
                             </div>
                         </div>
                     </div>

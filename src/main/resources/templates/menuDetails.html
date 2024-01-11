@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<main role="main">
+    <section class="container py-4">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow mb-3">
+                    <img alt="donut-img"
+                        th:src="${donut.imgUrl}"
+                    >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title lead text-muted">
+                            <div class="row">
+                                <div class="col" th:text="${donut.name}"></div>
+                                <div class="col text-end" th:text="${donut.price}"></div>
+                            </div>
+                        </h3>
+                        <p class="card-text">
+                            InStock : <span th:text="${donut.quantity}"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

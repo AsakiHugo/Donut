@@ -2,6 +2,7 @@ package com.example.donut.service;
 
 import com.example.donut.dao.ProductDao;
 import com.example.donut.entity.Product;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +19,9 @@ public class MainService {
 
     public void deleteProduct(int id) {
         productDao.deleteById(id);
+    }
+
+    public Product findProductById(int id) {
+        return productDao.findById(id).orElseThrow(EntityNotFoundException::new);
     }
 }

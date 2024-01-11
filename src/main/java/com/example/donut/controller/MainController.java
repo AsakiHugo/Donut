@@ -30,4 +30,10 @@ public class MainController {
         mainService.deleteProduct(id);
         return "redirect:/menus";
     }
+
+    @GetMapping("/menus/menu-details")
+    public String menuDetails(Model model, @RequestParam("id") int id) {
+        model.addAttribute("donut", mainService.findProductById(id));
+        return "menuDetails";
+    }
 }
