@@ -15,4 +15,8 @@ public class MainService {
     public List<Product> listAllProducts() {
         return productDao.findAll();
     }
+
+    public void deleteProduct(int id) {
+        productDao.deleteById(id);
+    }
 }

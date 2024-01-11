@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<main role="main">
+    <div class="container py-4">
+        <h3 class="text-center pb-4">Our Menus</h3>
+        
+        <table class="table table-striped border">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="donut : ${donuts}">
+                <td th:text="${donut.id}"></td>
+                <td th:text="${donut.name}"></td>
+                <td th:text="${donut.price}"></td>
+                <td th:text="${donut.quantity}"></td>
+                <td>
+                    <a class="btn btn-danger"
+                        th:href="@{'/menus/delete-product?id=' + ${donut.id}}"
+                    >Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

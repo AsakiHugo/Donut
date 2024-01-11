@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="../../static/bootstrap/css/bootstrap.min.css"
           th:href="@{/bootstrap/css/bootstrap.min.css}"
     >
+    <link rel="stylesheet" href="../../static/bootstrap/css/app.css"
+        th:href="@{/bootstrap/css/app.css}"
+    >
 </head>
 <body>
 
 <nav class="navbar navbar-expand-md bg-light">
-    <a href="#" class="navbar-brand">
+    <a class="navbar-brand"
+        th:href="@{/home}"
+    >
         <h4>Naruto</h4>
     </a>
 
@@ -26,7 +31,13 @@
     <div class="navbar-collapse collapse" id="myNavbar">
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link"
+                   th:href="@{/home}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   th:href="@{/menus}"
+                >Menus</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Create Donut</a>
