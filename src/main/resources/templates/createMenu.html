@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<main role="main">
+    <div class="container my-4">
+        <form method="post"
+              th:object="${donut}"
+              th:action="@{/menus/create-product}"
+        >
+            <h2 class="mb-5">Create Product</h2>
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input class="form-control" type="text" id="name" name="name"
+                    th:field="*{name}"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input class="form-control" type="text" id="price" name="price"
+                    th:field="*{price}"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input class="form-control" type="text" id="quantity" name="quantity"
+                    th:field="*{quantity}"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="imgUrl" class="form-label">Image Url</label>
+                <input class="form-control" type="text" id="imgUrl" name="imgUrl"
+                    th:field="*{imgUrl}"
+                >
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

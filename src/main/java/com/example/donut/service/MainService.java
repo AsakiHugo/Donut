@@ -24,4 +24,8 @@ public class MainService {
     public Product findProductById(int id) {
         return productDao.findById(id).orElseThrow(EntityNotFoundException::new);
     }
+
+    public void createProduct(Product product) {
+        productDao.save(product);
+    }
 }
