@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<main role="main">
+    <section class="d-flex justify-content-center align-items-center" id="heroImg" style="min-height: 580px;">
+        <div class="container text-center">
+            <h2 class="display-1">How Delicious Our Donut</h2>
+            <h4 class="display-4 my-3">Indulge in joy, one delicious ring at a time.</h4>
+            <a class="btn btn-primary btn-lg" href="#">Explore More</a>
+        </div>
+    </section>
+
+    <section class="container-fluid bg-light">
+        <div class="container py-4">
+            <h4 class="text-center py-4">Some of our products</h4>
+
+            <div>
+                <div class="row">
+                    <div class="col-md-4"
+                        th:each="donut : ${donuts}"
+                    >
+                        <div class="card shadow  mb-4">
+                            <img alt="donut-img"
+                                th:src="${donut.imgUrl}"
+                            >
+                            <div class="card-body">
+                                <p class="card-title lead text-muted">
+                                    <div class="row">
+                                        <div class="col" th:text="${donut.name}"></div>
+                                        <div class="col text-end" th:text="${donut.price}"></div>
+                                    </div>
+                                </p>
+                                <p class="card-text">
+                                    InStock : <span th:text="${donut.quantity}"></span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-primary" href="#">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
